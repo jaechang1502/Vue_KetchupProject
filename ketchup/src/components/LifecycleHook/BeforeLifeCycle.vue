@@ -10,7 +10,7 @@ export default {
       this.showHideSpinner = true;  
     },
     mounted () {
-    this.showHideSpinner = true;
+    this.showHideSpinner = false;
     },
     data(){
         return{
