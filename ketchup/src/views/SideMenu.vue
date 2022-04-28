@@ -18,16 +18,16 @@
          <TotalSearch :menu="menu"/>
     </div>
     <div v-if="menu==1" >
-        캐릭터만 보여요 
+        캐릭터만 보여요!
     </div>
         <div v-if="menu==2">
-        텍스트만 보여요 
+        텍스트만 보여요 !
     </div>
         <div v-if="menu==3">
-        말풍선만보여여
+        말풍선만보여여!
     </div>
         <div v-if="menu==4">
-            조합만 보여여 
+            조합만 보여여! 
     </div>
         <div v-if="menu==5">
             배경만 보여요 
