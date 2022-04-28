@@ -39,9 +39,9 @@ npm run build
 npm run lint
 ```
 ## Text
-1.처음에 [Tooning](https://tooning.io/tooning-landing-main)이라는걸 보고  와 대단하다 하면 재밋겠다 한걸 진짜 프로젝트에 넣어버려서 부담감 ㅠㅠㅠㅠㅠ   
-2.프론트엔드를 하려 왓지만 막상 쉽다던 vue써보니 어렵다는걸 알고 눈물만 흘렷다.(사실 php도 그랫음 쉽다햇는데 해보니 어려움)   
-3.HTML CanvasAPI쓰려햇는데 영 몰라서 못썻음  
+1. 처음에 [Tooning](https://tooning.io/tooning-landing-main)이라는걸 보고  와 대단하다 하면 재밋겠다 한걸 진짜 프로젝트에 넣어버려서 부담감 ㅠㅠㅠㅠㅠ   
+2. 프론트엔드를 하려 왓지만 막상 쉽다던 vue써보니 어렵다는걸 알고 눈물만 흘렷다.(사실 php도 그랫음 쉽다햇는데 해보니 어려움)   
+3. HTML CanvasAPI쓰려햇는데 영 몰라서 못썻음  
 <!----------->
 <strong>개선</strong> 
 1. 걍 함  
