@@ -1,9 +1,8 @@
 # ketchup_project
 - Tool 소개
-<div>Toast UI Image editor
-</div>
+Toast UI Image editor
 - npm 설치한거
- <p>1</p>
+ 
 
 ## 📖 프로젝트 설치
 - 설치
