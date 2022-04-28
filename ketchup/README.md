@@ -18,6 +18,8 @@
 npx @vue/cli create editor
 cd editor
 npm i @toast-ui/vue-image-editor bootstrap-vue
+npm install sass-loader
+npm install node-sass
 vue add router
 vue add axios
 vue add vuex
