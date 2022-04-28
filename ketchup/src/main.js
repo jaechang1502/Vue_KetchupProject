@@ -5,7 +5,7 @@ import {BootstrapVue,BootstrapVueIcons} from "bootstrap-vue";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
 import "tui-image-editor/dist/tui-image-editor.css";
-import store from './store'
+import store from './store/store.js';
 
 
 Vue.use(BootstrapVue);
