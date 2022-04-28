@@ -2,6 +2,18 @@ body{
     background-color:#1e1e1e !important;
   }
   .btn.btn-primary,
+  .shake{
+    animation: .8s shake infinite alternate;
+  }
+  @keyframes shake {
+    0% { transform: skewX(-15deg); }
+    5% { transform: skewX(15deg); }
+    10% { transform: skewX(-15deg); }
+    15% { transform: skewX(15deg); }
+    20% { transform: skewX(0deg); }
+    100% { transform: skewX(0deg); }  
+  }
+  
   button {
       margin-right: 10px !important;
   }
@@ -33,3 +45,4 @@ body{
   .native{
     background: transparent !important;
   }
+  

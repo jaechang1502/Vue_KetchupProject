@@ -19,16 +19,7 @@
     import TopMenu from './TopMenu.vue';
     import SideMenu from './SideMenu.vue';
     import RightMenu from './RightMenu.vue';
-    const icona = require("tui-image-editor/dist/svg/icon-a.svg");
-    const iconb = require("tui-image-editor/dist/svg/icon-b.svg");
-    const iconc = require("tui-image-editor/dist/svg/icon-c.svg");
-    const icond = require("tui-image-editor/dist/svg/icon-d.svg");
-    const blackTheme = {
-        "menu.normalIcon.path": icond,
-        "menu.activeIcon.path": iconb,
-        "menu.disabledIcon.path": icona,
-        "menu.hoverIcon.path": iconc
-    };
+
     export default {
         name: "home",
         components: {
@@ -42,9 +33,9 @@
                 useDefaultUI: true,
                 options: {
                     cssMaxWidth: window.innerWidth,
-                    cssHeight: 800,
+                    cssHeight: window.innerHeight,
                     includeUI: {
-                        theme: blackTheme
+                       
                     },
                     initMenu: "filter"
                 }

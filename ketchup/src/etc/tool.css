@@ -1,0 +1,25 @@
+.total_search{
+    background: transparent !important;
+    color: white !important;
+    border-left: none !important;
+  }
+  .total_search:placeholder{
+    color: white !important;
+  }
+  .total_serch:focus{
+      outline:none;
+  }
+  .btn_more{
+    border: none;
+    background: transparent;
+    color: orange;
+  }
+.nav-link:hover {
+    background-color: #525252 !important   
+}
+.nav-link .fa {
+    transition: all 1s;   
+}
+.nav-link:hover .fa {
+    transform: rotate(360deg)
+}

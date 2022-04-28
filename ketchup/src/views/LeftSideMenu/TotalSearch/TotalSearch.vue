@@ -84,18 +84,5 @@ export default {
 </script>
 
 <style>
-.total_search{
-  background: transparent !important;
-  color: white !important;
-  border-left: none !important;
-}
-.total_search:placeholder{
-  color: white !important;
-}
-.btn_more{
-  border: none;
-  background: transparent;
-  color: orange;
-  
-}
+
 </style>

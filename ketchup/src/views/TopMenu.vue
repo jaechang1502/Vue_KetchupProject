@@ -2,7 +2,7 @@
         <b-navbar class="headbar" toggleable="lg" type="dark">
             <b-collapse id="nav-collapse" is-nav="is-nav">
                 <b-navbar-brand to="/">
-                    <img src="../assets/123.png" alt=""/></b-navbar-brand>
+                <div class="shake"><img src="../assets/123.png" alt=""/></div></b-navbar-brand>
                 <b-navbar-nav>
                     <b-button class="ml-5" style="color: white" variant="#2c2a34">
                         <img src="../assets/undo.png" alt=""/></b-button>
