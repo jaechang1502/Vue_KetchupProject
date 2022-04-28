@@ -1,24 +1,19 @@
 # ketchup
 
-## Project setup
+## 📖 프로젝트 설치
+- 설치
 ```
 npm install
 ```
-
-### Compiles and hot-reloads for development
+- 실행
 ```
 npm run serve
 ```
-
-### Compiles and minifies for production
+-배포
 ```
 npm run build
 ```
-
-### Lints and fixes files
-```
+- lint 수정
+ ```
 npm run lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
