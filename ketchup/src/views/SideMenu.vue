@@ -33,7 +33,7 @@
             배경만 보여요 
     </div>
         <div v-if="$store.state.menu==6">
-            업로드 화면 
+        <Upload />
     </div>
     
 </div>
@@ -45,7 +45,8 @@
 
 <script>
 import loading from '../components/LifecycleHook/BeforeLifeCycle.vue'
-import TotalSearch from './LeftSideMenu/TotalSearch.vue'
+import TotalSearch from './LeftSideMenu/TotalSearch/TotalSearch.vue'
+import Upload from './LeftSideMenu/Upload/Upload.vue'
 export default {
     data(){
         return {
@@ -53,8 +54,11 @@ export default {
         }
     },
     components: {
+        
         loading,
         TotalSearch,
+        Upload,
+        
     }
 
 }

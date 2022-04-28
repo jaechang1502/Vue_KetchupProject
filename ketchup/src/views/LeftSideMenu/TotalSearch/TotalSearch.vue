@@ -67,8 +67,8 @@
 </template>
 
 <script>
-import ChracterSlide from './Carousel/CharacterCarousel.vue'
-import BackgroundSlide from './Carousel/BackgroundCarousel.vue'
+import ChracterSlide from '../Carousel/CharacterCarousel.vue'
+import BackgroundSlide from '../Carousel/BackgroundCarousel.vue'
 export default {
   data(){
     return{
