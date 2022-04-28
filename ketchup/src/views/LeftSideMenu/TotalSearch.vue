@@ -13,7 +13,7 @@
                     <strong>캐릭터</strong>
                 </b-col>
                 <b-col cols="auto">
-                    <button class="btn_more" @click="low_menu=1">더보기 ></button>
+                    <button class="btn_more" @click="$store.commit('mainmenu',1)" >더보기 ></button>
                    
                 </b-col>
             </b-row>
@@ -28,7 +28,7 @@
                     <strong>배경</strong>
                 </b-col>
                 <b-col cols="auto">
-                    <button class="btn_more" @click="$emit(low_menu)" >더보기 ></button>
+                    <button class="btn_more" >더보기 ></button>
                 </b-col>
             </b-row>
             <div>

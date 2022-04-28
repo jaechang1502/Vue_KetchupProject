@@ -10,9 +10,10 @@ export default new Vuex.Store({
   getters: {
   },
   mutations: {
-    charactermenu(state) {
-      state.menu = 1
-    }
+   mainmenu(state,data){
+     state.menu = data;
+
+   }
   },
   actions: {
   },
