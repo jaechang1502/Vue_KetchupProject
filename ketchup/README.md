@@ -16,6 +16,7 @@
 [그냥따라햇음](https://morioh.com/p/74cfb27578ef)
 ```
 npx @vue/cli create editor
+cd editor
 npm i @toast-ui/vue-image-editor bootstrap-vue
 vue add router
 vue add axios
