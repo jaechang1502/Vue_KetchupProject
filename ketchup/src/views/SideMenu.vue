@@ -18,13 +18,13 @@
          <TotalSearch />
     </div>
     <div v-if="$store.state.menu==1">
-        캐릭터만 보여요
+        <Characters/>
     </div>
         <div v-if="$store.state.menu==2">
-        텍스트만 보여요 !
+       <TextSearch/>
     </div>
         <div v-if="$store.state.menu==3">
-        말풍선만보여여!
+        <b-button @click="$store.dispatch('images')">123</b-button>
     </div>
         <div v-if="$store.state.menu==4">
             조합만 보여여! 
@@ -47,6 +47,10 @@
 import loading from '../components/LifecycleHook/BeforeLifeCycle.vue'
 import TotalSearch from './LeftSideMenu/TotalSearch/TotalSearch.vue'
 import Upload from './LeftSideMenu/Upload/Upload.vue'
+import Characters from './LeftSideMenu/Characters/Characters.vue'
+import TextSearch from './LeftSideMenu/Text/TextSearch.vue'
+
+
 export default {
     data(){
         return {
@@ -58,6 +62,8 @@ export default {
         loading,
         TotalSearch,
         Upload,
+        Characters,
+        TextSearch
         
     }
 
