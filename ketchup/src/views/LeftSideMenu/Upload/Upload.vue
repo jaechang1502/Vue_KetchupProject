@@ -6,7 +6,7 @@
       <b-input-group-prepend is-text="is-text">
         <b-icon icon="search"></b-icon>
       </b-input-group-prepend>
-      <b-form-input  v-model="text"   placeholder="검색어를 입력하세요" class="total_search"></b-form-input>
+      <b-form-input     placeholder="검색어를 입력하세요" class="total_search"></b-form-input>
     </b-input-group>
 
     <div>
