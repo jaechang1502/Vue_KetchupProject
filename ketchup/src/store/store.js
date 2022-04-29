@@ -6,14 +6,17 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    menu: 0
+    menu: 0,
+    active: 'active'
   },
   getters: {
   },
   mutations: {
    mainmenu(state,data){
      state.menu = data;
-
+   },
+   activemenu(state,active){
+     state.active = active;
    }
   },
   actions: {

@@ -27,3 +27,22 @@
     background: transparent;
     border-right: none;
 }
+.nav_tab{
+  background: transparent;
+  color: white;
+}
+.nav_tab a {
+  color: white;
+  font-weight: 100;
+}
+.nav_tab .nav-link.active{
+  background: transparent;
+  color:white;
+  border-color: transparent transparent yellow;
+}
+.nav_tab .nav-link:hover{
+  border-color: transparent transparent yellow;
+}
+
+
+
