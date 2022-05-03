@@ -8,12 +8,15 @@ export default new Vuex.Store({
   state: {
     menu: 0,
     active: 'active',
-    images:[]
+    images:{}
     
   },
   getters: {
   },
   mutations: {
+    setimages(state, data) {
+    state.images = data
+    },
    mainmenu(state,data){
      state.menu = data;
    },
@@ -23,8 +26,7 @@ export default new Vuex.Store({
   },
   actions: {
    
-    images(state){
-      let img = state.images
+    getimages(){
     axios.get('https://api.unsplash.com/photos/random',{
       params: {
         client_id:'v0F7ccr-QO5x8jlZ2fKf8OqAYbCMjFOjUWRTyRRpwSM',
@@ -32,9 +34,11 @@ export default new Vuex.Store({
       }
     }).then((res)=>{ 
       for (let i = 0; i < res.data.length; i++) {
-      img.push(res.data[i].urls.small);
-      return img;
+        const result = res.data[i].urls.small;
+        commit('setimages',result)
       }
+      
+      
     })
       }
       /*

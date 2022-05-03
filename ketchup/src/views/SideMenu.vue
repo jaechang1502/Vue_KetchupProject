@@ -24,7 +24,7 @@
        <TextSearch/>
     </div>
         <div v-if="$store.state.menu==3">
-        <b-button @click="$store.dispatch('images')">123</b-button>
+        <b-button @click="$store.dispatch('getimages')">123</b-button>
         {{$store.state.images}}
     </div>
         <div v-if="$store.state.menu==4">
