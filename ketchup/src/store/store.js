@@ -8,7 +8,7 @@ export default new Vuex.Store({
   state: {
     menu: 0,
     active: 'active',
-    images:{}
+    images:[]
     
   },
   getters: {
@@ -26,17 +26,17 @@ export default new Vuex.Store({
   },
   actions: {
    
-    getimages(){
+    getimages(store){
     axios.get('https://api.unsplash.com/photos/random',{
       params: {
         client_id:'v0F7ccr-QO5x8jlZ2fKf8OqAYbCMjFOjUWRTyRRpwSM',
         count: 30
       }
     }).then((res)=>{ 
-      for (let i = 0; i < res.data.length; i++) {
-        const result = res.data[i].urls.small;
-        commit('setimages',result)
-      }
+     
+        const result = res.data.map(image => image.urls.small);
+        console.log(result);
+        store.commit('setimages',result)
       
       
     })

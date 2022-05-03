@@ -4,7 +4,7 @@
      
     <ul class="nav nav-pills flex-column mb-auto">
         <li @click="$store.commit('mainmenu',0)"> <a href="#" class="nav-link text-white text-center h6 p-2" style=" font-size:10.5px"><b-icon icon="search"  font-scale="2" shift-v="2"></b-icon><br><p>통합 검색</p></a></li>
-        <li @click="$store.commit('mainmenu',1)"> <a href="#" class="nav-link text-white text-center h6 p-3" style=" font-size:10.5px"><b-icon icon="emoji-wink"  font-scale="2" shift-v="2"></b-icon><br>캐릭터</a></li>
+        <li @click="$store.commit('mainmenu',1),$store.dispatch('getimages')"> <a href="#" class="nav-link text-white text-center h6 p-3" style=" font-size:10.5px"><b-icon icon="emoji-wink"  font-scale="2" shift-v="2"></b-icon><br>캐릭터</a></li>
         <li  @click="$store.commit('mainmenu',2)"> <a href="#" class="nav-link text-white text-center h6 p-3" style="font-size:10.5px"><b-icon icon="fonts"  font-scale="2" shift-v="2"></b-icon><br>텍스트</a></li>
         <li  @click="$store.commit('mainmenu',3)"> <a href="#" class="nav-link text-white text-center h6 p-3" style="font-size:10.5px"><b-icon icon="chat"  font-scale="2" shift-v="2"></b-icon><br>말풍선</a></li>
         <li  @click="$store.commit('mainmenu',4)"> <a href="#" class="nav-link text-white text-center h6 p-3" style="font-size:10.5px"><b-icon icon="grid"  font-scale="2" shift-v="2"></b-icon><br>조합</a></li>
