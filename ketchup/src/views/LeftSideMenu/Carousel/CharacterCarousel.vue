@@ -9,7 +9,7 @@
         </b-card-group>
     </template>
 </b-carousel-slide>
-    </b-carousel>
+    </b-carousel> 
 
   </div>
 </template>

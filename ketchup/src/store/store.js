@@ -34,8 +34,12 @@ export default new Vuex.Store({
       }
     }).then((res)=>{ 
      
-        const result = res.data.map(image => image.urls.small);
-        console.log(result);
+       // const result = res.data.map(image => image.urls.small);
+        let result =[];
+        for(let i = 0; i< res.data.length; i++ )
+        {
+          result.push(res.data[i].urls.small); 
+        }
         store.commit('setimages',result)
       
       
