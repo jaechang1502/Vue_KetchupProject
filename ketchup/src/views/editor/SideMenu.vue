@@ -45,7 +45,7 @@
 </template>
 
 <script>
-import loading from '../components/LifecycleHook/BeforeLifeCycle.vue'
+import loading from '../../components/LifecycleHook/BeforeLifeCycle.vue'
 import TotalSearch from './LeftSideMenu/TotalSearch/TotalSearch.vue'
 import Upload from './LeftSideMenu/Upload/Upload.vue'
 import Characters from './LeftSideMenu/Characters/Characters.vue'
