@@ -7,8 +7,9 @@ import mainhead from './Head/MainHead.vue'
 export default {
     components: {
         mainhead,
+    },
     }
-}
+
 </script>
 
 <style>

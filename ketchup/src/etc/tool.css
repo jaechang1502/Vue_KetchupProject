@@ -43,6 +43,28 @@
 .nav_tab .nav-link:hover{
   border-color: transparent transparent yellow;
 }
+.login{
+  border: none;
+  color: white;
+  background: transparent;
+  font-weight: bold;
+  font-family: yg-jalnan;
+}
+.login:hover {
+  color: yellow;
+}
+.produce{
+  border: none;
+  border-radius: 4px;
+  font-family: yg-jalnan;
+  padding: 4px;
+  background: rgb(230,15,8);
+background: linear-gradient(90deg, rgba(230,15,8,1) 0%, rgba(251,251,251,1) 97%);
+}
+.produce:hover{
+  filter: brightness(80%); 
+}
+
 
 
 

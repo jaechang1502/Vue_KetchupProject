@@ -1,6 +1,13 @@
 body{
     background-color:#1e1e1e !important;
+    
   }
+  @font-face {
+    font-family: 'yg-jalnan';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
   .btn.btn-primary,
   .shake{
     animation: .8s shake infinite alternate;
@@ -45,4 +52,4 @@ body{
   .native{
     background: transparent !important;
   }
-  
+ 
