@@ -3,8 +3,8 @@ body{
     
   }
   @font-face {
-    font-family: 'yg-jalnan';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
+    font-family: 'GongGothicMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicMedium.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -20,6 +20,7 @@ body{
     20% { transform: skewX(0deg); }
     100% { transform: skewX(0deg); }  
   }
+  
   
   button {
       margin-right: 10px !important;

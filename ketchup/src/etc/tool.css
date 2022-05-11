@@ -9,6 +9,10 @@
   .total_serch:focus{
       outline:none;
   }
+  .editor-con{
+    overflow-x: hidden;
+    
+  }
   .btn_more{
     border: none;
     background: transparent;
@@ -48,21 +52,10 @@
   color: white;
   background: transparent;
   font-weight: bold;
-  font-family: yg-jalnan;
+  font-family: GongGothicMedium;
 }
 .login:hover {
-  color: yellow;
-}
-.produce{
-  border: none;
-  border-radius: 4px;
-  font-family: yg-jalnan;
-  padding: 4px;
-  background: rgb(230,15,8);
-background: linear-gradient(90deg, rgba(230,15,8,1) 0%, rgba(251,251,251,1) 97%);
-}
-.produce:hover{
-  filter: brightness(80%); 
+  color: aquamarine;
 }
 
 

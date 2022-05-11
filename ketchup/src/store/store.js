@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import axios from 'axios'
+import { ImageEditor } from "@toast-ui/vue-image-editor"
 
 Vue.use(Vuex)
 
@@ -8,7 +9,8 @@ export default new Vuex.Store({
   state: {
     menu: 0,
     active: 'active',
-    images:[]
+    images:[],
+    imageeditor: ImageEditor
     
   },
   getters: {
@@ -22,7 +24,11 @@ export default new Vuex.Store({
    },
    activemenu(state,active){
      state.active = active;
+   },
+   cropmode(state){
+    console.log(state.imageeditor)
    }
+   
   },
   actions: {
    
@@ -41,9 +47,8 @@ export default new Vuex.Store({
           result.push(res.data[i].urls.small); 
         }
         store.commit('setimages',result)
-      
-      
     })
+    .catch((err)=>{ console.log(err);})
       }
       /*
     actions 쓸때는 ex) @click="$store.dispatch('함수명')"

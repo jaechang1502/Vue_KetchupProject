@@ -11,8 +11,9 @@
                 <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
             </b-collapse>
             <b-navbar-nav class="ml-auto">
-                <button class="login">로그인/가입</button>
-               <button class="produce pl-2 pr-2" @click="editor()"> 케찹 제작하기</button>
+                <button class="login">Login/Logout</button>
+                <button class="login  text-flicker-out-glow" @click="editor()">제작하기</button>
+              
             </b-navbar-nav>
         </b-navbar>
   </div>
