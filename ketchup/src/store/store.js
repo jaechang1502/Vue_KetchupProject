@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import axios from 'axios'
-import { ImageEditor } from "@toast-ui/vue-image-editor"
+
 
 Vue.use(Vuex)
 
@@ -10,7 +10,7 @@ export default new Vuex.Store({
     menu: 0,
     active: 'active',
     images:[],
-    imageeditor: ImageEditor
+    editdata: ''
     
   },
   getters: {
@@ -26,7 +26,18 @@ export default new Vuex.Store({
      state.active = active;
    },
    cropmode(state){
-    console.log(state.imageeditor)
+    console.log(state.imageeditor.$el)
+   },
+   Editor(state,data){
+     state.editdata = data
+    const pre = state.editdata.editor
+    const drawingMode  = pre.invoke('getDrawingMode');
+    if (drawingMode == "CROPPER") {
+      pre.invoke("startDrawingMode", "FREE_DRAWING");
+  } else {
+      pre.invoke("startDrawingMode", "CROPPER");
+  }
+     
    }
    
   },

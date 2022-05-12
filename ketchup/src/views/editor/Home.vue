@@ -1,5 +1,6 @@
 <template>
     <div class="page">
+       
         <TopMenu></TopMenu>
         <div class="Container d-flex w-100">
             <!-- 왼쪽 사이드 메뉴 컴포넌트 -->
@@ -10,6 +11,7 @@
             </div>
             <!-- 오른쪽 사이드바 컴포넌트 -->
             <RightMenu/>
+             <b-button @click="$store.commit('Editor',result)">test</b-button>
         <!-- 오른쪽 사이드바끝 -->
         </div>
     </div>
@@ -37,28 +39,13 @@
                     includeUI: {
                        
                     },
-                    initMenu: "filter"
-                }
+                    initMenu: "filter",
+                },
+                result :this.$refs
             };
         },
         methods: {
-            cropMode() {
-                const drawingMode = this
-                    .$refs
-                    .editor
-                    .invoke("getDrawingMode");
-                if (drawingMode == "CROPPER") {
-                    this
-                        .$refs
-                        .editor
-                        .invoke("startDrawingMode", "FREE_DRAWING");
-                } else {
-                    this
-                        .$refs
-                        .editor
-                        .invoke("startDrawingMode", "CROPPER");
-                }
-            }
+           
         }
     };
 </script>
