@@ -11,12 +11,13 @@
             </div>
             <!-- 오른쪽 사이드바 컴포넌트 -->
             <RightMenu/>
-             <b-button @click="$store.commit('Editor',result)">test</b-button>
+     
         <!-- 오른쪽 사이드바끝 -->
         </div>
     </div>
 </template>
 <script>
+
     import {ImageEditor} from "@toast-ui/vue-image-editor";
     import TopMenu from './TopMenu.vue';
     import SideMenu from './SideMenu.vue';
@@ -33,10 +34,18 @@
         data() {
             return {
                 useDefaultUI: true,
+                
                 options: {
                     cssMaxWidth: window.innerWidth,
                     cssHeight: window.innerHeight,
                     includeUI: {
+                        locale : {
+                            ZoomIn:'줌인',
+                            ZoomOut: '줌아웃',
+                            Crop : '자르기',
+                            Load : '업로드',
+                        }
+                        
                        
                     },
                     initMenu: "filter",
@@ -44,9 +53,9 @@
                 result :this.$refs
             };
         },
-        methods: {
-           
-        }
+        mounted(){
+            this.$store.commit('Editor',this.result)
+        }  
     };
 </script>
 <style scoped="scoped">

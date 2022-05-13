@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-button class="w-100 mb-2" style="background-color: #ff7800">
+    <b-button @click="upload(file)" class="w-100 mb-2" style="background-color: #ff7800">
       내 파일 업로드</b-button>
     <b-input-group class="mb-3">
       <b-input-group-prepend is-text="is-text">
@@ -37,8 +37,14 @@ export default {
       active : ''
      
     }
+  },
+  methods: {
+    upload(file){
+      let edit = this.$store.state.editdata.editor
+      console.log(edit.invoke('loadImageFromURL',file,'theName'))
+   }
   }
-};
+}
 </script>
 
 <style>

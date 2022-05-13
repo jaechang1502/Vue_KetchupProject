@@ -6,7 +6,7 @@
 
 <script>
 export default {
-    beforeCreate(){
+    beforeMount(){
       this.showHideSpinner = true;  
     },
     mounted () {

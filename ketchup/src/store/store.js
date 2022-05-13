@@ -3,15 +3,17 @@ import Vuex from 'vuex'
 import axios from 'axios'
 
 
+
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
     menu: 0,
-    active: 'active',
     images:[],
-    editdata: ''
-    
+    active: 'active',
+    editdata: '',
+    upload: '',
+       
   },
   getters: {
   },
@@ -25,21 +27,10 @@ export default new Vuex.Store({
    activemenu(state,active){
      state.active = active;
    },
-   cropmode(state){
-    console.log(state.imageeditor.$el)
-   },
    Editor(state,data){
-     state.editdata = data
-    const pre = state.editdata.editor
-    const drawingMode  = pre.invoke('getDrawingMode');
-    if (drawingMode == "CROPPER") {
-      pre.invoke("startDrawingMode", "FREE_DRAWING");
-  } else {
-      pre.invoke("startDrawingMode", "CROPPER");
-  }
-     
-   }
-   
+     state.editdata = data;
+   },
+  
   },
   actions: {
    
@@ -47,7 +38,7 @@ export default new Vuex.Store({
     axios.get('https://api.unsplash.com/photos/random',{
       params: {
         client_id:'v0F7ccr-QO5x8jlZ2fKf8OqAYbCMjFOjUWRTyRRpwSM',
-        count: 30
+        count: 300
       }
     }).then((res)=>{ 
      

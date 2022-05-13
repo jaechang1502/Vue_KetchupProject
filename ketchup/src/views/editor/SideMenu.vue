@@ -25,7 +25,7 @@
        <TextSearch/>
     </div>
         <div v-if="$store.state.menu==3">
-        <b-button @click="$store.commit('cropmode')" >123</b-button>
+        <b-button @click="test()" >123</b-button>
         
     </div>
         <div v-if="$store.state.menu==4">
@@ -72,8 +72,18 @@ export default {
         Characters,
         TextSearch
         
+    },
+    methods: {
+        test(){
+            let test = this.$store.state.editdata.editor;
+           const drawingMode = test.invoke('getDrowingMode');
+            if (drawingMode == "CROPPER") {
+              test.invoke("startDrawingMode", "FREE_DRAWING");}
+            else {
+            test.invoke("startDrawingMode", "CROPPER");
+             }
+        }
     }
-
 }
 </script>
 
