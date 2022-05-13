@@ -2,7 +2,7 @@
   <div >
     <carousel :autoplay="true" :nav="false" :dots="false" class="marginTop10" :items="2" :autoheight="true" :loop="true"  >
   <div v-for="(item, i) in $store.state.images" :key="i">
-    <img  :src="$store.state.images[i]" alt="">
+    <img :src="$store.state.images[i]" alt="">
   </div>
  
  

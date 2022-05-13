@@ -5,9 +5,9 @@
                
                 <div class="shake"><img src="../../assets/123.png" alt=""/></div></b-navbar-brand>
                 <b-navbar-nav>
-                    <b-button class="ml-5" style="color: white" variant="#2c2a34">
+                    <b-button @click="undo()" class="ml-5" style="color: white" variant="#2c2a34">
                         <img src="../../assets/undo.png" alt=""/></b-button>
-                    <b-button style="color: white" variant="#2c2a34">
+                    <b-button @click="redo()" style="color: white" variant="#2c2a34">
                         <img src="../../assets/redo.png" alt=""/></b-button>
                     <b-nav-form>
                         <input class="subject" type="text" placeholder="제목을 입력하세요"/>
@@ -31,7 +31,15 @@
 <script>
 export default {
     name: 'TopMenu',
-    
+    methods: {
+        undo(){
+           this.$store.state.editdata.editor.invoke('undo')
+        },
+        redo(){
+            this.$store.state.editdata.editor.invoke('redo')
+        }
+
+    },
 
 }
 </script>
