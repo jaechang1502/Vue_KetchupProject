@@ -9,12 +9,14 @@ import carousel from 'vue-owl-carousel'
 import store from './store/store.js';
 import ToolScss from './etc/tool.scss';
 import ToolCss from './etc/tool.css';
+import FontData from './etc/fontdata.scss'
 
 
 Vue.use(BootstrapVue);
 Vue.use(BootstrapVueIcons);
 Vue.use(ToolScss);
 Vue.use(ToolCss);
+Vue.use(FontData);
 Vue.use(carousel);
 
 Vue.config.productionTip = false
