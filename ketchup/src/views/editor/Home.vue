@@ -7,7 +7,8 @@
           <sideMenu/>
            <!-- 에디터  -->
             <div class="imageEditorApp">
-                <tui-image-editor ref="editor" :include-ui="useDefaultUI" :options="options"></tui-image-editor>
+                <tui-image-editor ref="editor" :include-ui="useDefaultUI" :options="TUIoptions"></tui-image-editor>
+              
             </div>
             <!-- 오른쪽 사이드바 컴포넌트 -->
             <RightMenu/>
@@ -15,7 +16,9 @@
         <!-- 오른쪽 사이드바끝 -->
         </div>
     </div>
+
 </template>
+
 <script>
 
     import {ImageEditor} from "@toast-ui/vue-image-editor";
@@ -35,10 +38,15 @@
             return {
                 useDefaultUI: true,
                 
-                options: {
+                TUIoptions: {
+                    
                     cssMaxWidth: window.innerWidth,
                     cssHeight: window.innerHeight,
                     includeUI: {
+                        loadImage: {
+                            path: require('./nomal.jpg'),
+                            name: 'test'
+                        },
                         locale : {
                             ZoomIn:'줌인',
                             ZoomOut: '줌아웃',
@@ -47,6 +55,10 @@
                         }
                         
                        
+                    },
+                    selectionStyle:{
+                        cornerSize: 10,
+                        cornerColor: '#000000',
                     },
                     initMenu: "filter",
                 },

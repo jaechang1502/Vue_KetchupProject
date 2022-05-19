@@ -1,7 +1,8 @@
 
 export default[
-        { value: null,
-          text: '폰트를 선택하세용 🧦'
+        { value: '',
+          text: '폰트를 선택하세용 🧦',
+          css: ''
         },
         { value: {
             fontfamily: 'Tium',

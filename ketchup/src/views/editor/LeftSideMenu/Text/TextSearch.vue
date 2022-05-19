@@ -3,25 +3,22 @@
   <div>
        <b-button @click="createtext()" class="w-100 mb-2" style="background-color: #ff7800">
       텍스트 추가</b-button>
-    <b-input-group class="mb-3">
-      <b-input-group-prepend is-text="is-text">
-        <b-icon icon="search"></b-icon>
-      </b-input-group-prepend>
-      <b-form-input   placeholder="텍스트 검색" class="total_search"></b-form-input>
-    </b-input-group>
+   
      <b-form-select v-model="selected"  >
-      <option :style="{fontFamily:options.css}" v-for="(options,idx) in options" :key="idx" :value="options.value">{{options.text}}</option>
+      <b-form-select-option :style="{fontFamily:options.css}" v-for="(options,idx) in options" :key="idx" :value="options.value">{{options.text}}</b-form-select-option>
       </b-form-select>
+      <p>{{selected}}</p>
   </div>
   </div>
 </template>
 
 <script>
+
 import fontdata from '../../../../Data/font.js'
 export default {
   data(){
     return {
-      selected: null,
+      selected: "",
       options: fontdata  
     }
   },
@@ -33,12 +30,11 @@ export default {
         fill: '#000',
         fontSize: 20,
         fontWeight: 'bold',
-        fontFamily: this.selected.fontfamily,
-        
+        fontFamily: this.selected.fontfamily,       
     },
     position: {
-        x: 10,
-        y: 10
+        x: 500,
+        y: 500
     }
        }).then((res)=>{
          console.log(res.id);
