@@ -1,6 +1,6 @@
 
 export default[
-        { value: '',
+        { value: '1',
           text: '폰트를 선택하세용 🧦',
           css: ''
         },
