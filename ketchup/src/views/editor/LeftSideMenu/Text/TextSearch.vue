@@ -8,13 +8,14 @@
       <b-form-select-option :style="{fontFamily:options.css}" v-for="(options,idx) in options" :key="idx" :value="options.value">{{options.text}}</b-form-select-option>
       </b-form-select>
       <p>{{selected}}</p>
+    
   </div>
-  <Textchange></Textchange>
+<Textfontchange></Textfontchange>
   </div>
 </template>
 
 <script>
-import Textchange from './Textchange/TextFontChange.vue'
+import Textfontchange from './Textchange/TextChange.vue'
 import fontdata from '../../../../Data/font.js'
 export default {
   data(){
@@ -46,10 +47,11 @@ export default {
        )
     },
   //text 끝  
-    components: {
-      Textchange
-    }
-  }
+  
+  },
+  components: { 
+    Textfontchange
+  },
 
 }
 </script>
