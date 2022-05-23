@@ -1,6 +1,6 @@
 <template>
 <div>
-  <div>
+  <div class="textCreate">
        <b-button @click="createtext()" class="w-100 mb-2" style="background-color: #ff7800">
       텍스트 추가</b-button>
    
@@ -9,16 +9,17 @@
       </b-form-select>
       <p>{{selected}}</p>
   </div>
+  <Textchange></Textchange>
   </div>
 </template>
 
 <script>
-
+import Textchange from './Textchange/TextFontChange.vue'
 import fontdata from '../../../../Data/font.js'
 export default {
   data(){
     return {
-      selected: "",
+      selected: { "fontfamily": "inherit" },
       options: fontdata  
     }
   },
@@ -45,7 +46,9 @@ export default {
        )
     },
   //text 끝  
-    
+    components: {
+      Textchange
+    }
   }
 
 }

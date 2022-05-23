@@ -57,6 +57,21 @@
 .login:hover {
   color: aquamarine;
 }
+.textaline{
+  border: none;
+  background: transparent;
+  color: white;
+}
+.textline:focus{
+  color:yellow;
+}
+.textaline_con{
+  border-top: solid 2px #525252;
+  border-bottom: solid 2px #525252;
+}
+.textaline_scon{
+  border-right: solid 2px #525252;
+}
 
 
 

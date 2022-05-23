@@ -1,8 +1,10 @@
 
 export default[
-        { value: '1',
+        { value: {
+            fontfamily: 'inherit',
+        },
           text: '폰트를 선택하세용 🧦',
-          css: ''
+          css: 'inherit'
         },
         { value: {
             fontfamily: 'Tium',
