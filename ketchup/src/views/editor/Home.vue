@@ -70,9 +70,3 @@
         }  
     };
 </script>
-<style scoped="scoped">
-    .imageEditorApp {
-        width: 95vw;
-        height: 93vh;
-    }
-</style>

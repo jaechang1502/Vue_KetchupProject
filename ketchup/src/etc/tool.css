@@ -1,3 +1,7 @@
+.imageEditorApp {
+  width: 95vw;
+  height: 93vh;
+}
 .total_search{
     background: transparent !important;
     color: white !important;
@@ -11,7 +15,6 @@
   }
   .editor-con{
     overflow-x: hidden;
-    
   }
   .btn_more{
     border: none;
