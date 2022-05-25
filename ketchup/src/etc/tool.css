@@ -72,6 +72,12 @@
 .textaline_scon{
   border-right: solid 2px #525252;
 }
+.footer{
+  background-color: #525252;
+ 
+  color:white;
+  font-family: GongGothicMedium;
+}
 
 
 

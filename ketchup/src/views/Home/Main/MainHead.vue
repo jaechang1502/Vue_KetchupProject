@@ -13,19 +13,25 @@
             <b-navbar-nav class="ml-auto">
                 <button class="login">Login/Logout</button>
                 <button class="login  text-flicker-out-glow" @click="editor()">제작하기</button>
+                
               
             </b-navbar-nav>
         </b-navbar>
+       <LoginMenu></LoginMenu>
   </div>
 </template>
 
 <script>
+import LoginMenu from './Login/LoginMenu.vue'
 export default {
      methods: {
         editor(){
             this.$router.push('/editor')
         }
 
+     },
+     components: {
+         LoginMenu
      }
  }
 </script>
