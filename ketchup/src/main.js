@@ -7,16 +7,13 @@ import "bootstrap-vue/dist/bootstrap-vue.css";
 import "tui-image-editor/dist/tui-image-editor.css";
 import carousel from 'vue-owl-carousel'
 import store from './store/store.js';
-import ToolScss from './etc/tool.scss';
-import ToolCss from './etc/tool.css';
-import FontData from './etc/fontdata.scss'
+import './etc/tool.scss';
+import './etc/tool.css';
+import './etc/fontdata.scss'
 
 
 Vue.use(BootstrapVue);
 Vue.use(BootstrapVueIcons);
-Vue.use(ToolScss);
-Vue.use(ToolCss);
-Vue.use(FontData);
 Vue.use(carousel);
 
 Vue.config.productionTip = false
