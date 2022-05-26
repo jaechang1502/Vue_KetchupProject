@@ -13,6 +13,8 @@ export default new Vuex.Store({
     active: 'active',
     editdata: '',
     upload: '',
+    loginmenu: false
+    
        
   },
   getters: {
@@ -30,6 +32,11 @@ export default new Vuex.Store({
    Editor(state,data){
      state.editdata = data;
    },
+   loginmenu(state,menu){
+     state.loginmenu = menu;
+   }
+   
+   
   
   },
   actions: {

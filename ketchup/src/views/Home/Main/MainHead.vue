@@ -11,13 +11,13 @@
                 <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
             </b-collapse>
             <b-navbar-nav class="ml-auto">
-                <button class="login">Login/Logout</button>
+                <button class="login" @click="$store.commit('loginmenu',true)">Login/Logout</button>
                 <button class="login  text-flicker-out-glow" @click="editor()">제작하기</button>
                 
               
             </b-navbar-nav>
         </b-navbar>
-       <LoginMenu></LoginMenu>
+       <LoginMenu v-if="$store.state.loginmenu"></LoginMenu>
   </div>
 </template>
 
@@ -33,6 +33,7 @@ export default {
      components: {
          LoginMenu
      }
+     
  }
 </script>
 
