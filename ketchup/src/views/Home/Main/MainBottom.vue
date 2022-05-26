@@ -1,7 +1,7 @@
 <template>
   <div>
    <div class="footer">
-     <div class=" border-bottom">
+     <div class=" border-bottom border-top mb-5">
      <div class="d-flex container p-0  justify-content-center h-100 ">
          <div class="text-center h-100 p-3 border-right border-white" style="width:33%">
          <div>

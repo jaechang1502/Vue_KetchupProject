@@ -13,7 +13,9 @@ export default new Vuex.Store({
     active: 'active',
     editdata: '',
     upload: '',
-    loginmenu: false
+    loginmenu: false,
+    ID: '',
+    password:'',
     
        
   },
