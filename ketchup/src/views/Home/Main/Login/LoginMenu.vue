@@ -16,7 +16,7 @@
            </div>
            <div class="d-flex justify-content-center align-items-center mt-3">
                <div class="p-2"><a>비밀번호찾기</a></div>
-               <div class="p-2"><a href="#">회원가입</a></div>
+               <div class="p-2"> <router-link to="/signup">회원가입</router-link></div>
            </div>
            <hr>
            <div class="mt-5">
