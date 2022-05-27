@@ -20,8 +20,8 @@
            </div>
            <hr>
            <div class="mt-5">
-               <b-button variant="warning" block > <b-icon class="mr-2" icon="chat-fill"></b-icon>  카카오톡으로 로그인</b-button>
-                <b-button variant="danger" block > <b-icon icon="google" class="mr-2" ></b-icon> 구글로 로그인</b-button>
+               <KakaoCheck></KakaoCheck>
+                <b-button class="mt-2" variant="danger" block > <b-icon icon="google" class="mr-2" ></b-icon> 구글로 로그인</b-button>
                <b-button variant="primary" block > <b-icon icon="facebook" class="mr-2" ></b-icon>  페이스북으로 로그인</b-button>
               
               
@@ -31,7 +31,11 @@
 </template>
 
 <script>
+import KakaoCheck from './LoginCheck/KakaoCheck.vue'
 export default {
+    components: {
+        KakaoCheck
+    }
 
 }
 </script>

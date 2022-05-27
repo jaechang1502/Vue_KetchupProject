@@ -3,3 +3,5 @@ ketchup/firebase-debug.log
 ketchup/.firebase/hosting.ZGlzdA.cache
 ketchup/.firebaserc
 ketchup/firebase.json
+ketchup/firestore.rules
+ketchup/firestore.indexes.json
