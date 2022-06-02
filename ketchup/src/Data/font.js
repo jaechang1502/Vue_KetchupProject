@@ -60,5 +60,11 @@ export default[
         },
         text: '이서윤체',
         css: 'LeeSeoyun'
-        },        
+        },
+        { value: {
+            fontfamily: 'LeferiPoint-WhiteObliqueA',
+        },
+        text: '레페리포인트 White Oblique',
+        css: 'LeferiPoint-WhiteObliqueA'
+        }
 ]
