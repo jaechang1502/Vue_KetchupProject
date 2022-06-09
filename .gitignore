@@ -6,3 +6,4 @@ ketchup/firebase.json
 ketchup/firestore.rules
 ketchup/firestore.indexes.json
 
+ketchup/src/plugins/firebaseconfig.js

@@ -9,14 +9,13 @@
 </div>
 <div class="textaline_con d-flex">
     <div class="p-3 textaline_scon">
-    <button class="textaline"><b-icon icon="text-left" aria-hidden="true"></b-icon></button>
+    <button class="textaline" ><b-icon icon="text-left" aria-hidden="true"></b-icon></button>
     <button class="textaline"> <b-icon icon="text-center" aria-hidden="true"></b-icon></button>
     <button class="textaline"> <b-icon icon="text-right" aria-hidden="true"></b-icon></button>
     </div>
-    <div class="p-3">
-    <button class="textaline"><b-icon icon="text-left" aria-hidden="true"></b-icon></button>
-    <button class="textaline"> <b-icon icon="text-center" aria-hidden="true"></b-icon></button>
-    <button class="textaline"> <b-icon icon="text-right" aria-hidden="true"></b-icon></button>
+    <div class="p-3 w-50">
+        <b-form-input v-model="value" type="color"></b-form-input>
+        {{value}}
     </div>
 </div>
 <div>
@@ -31,7 +30,8 @@ export default {
     data(){
         return{
             textchanged: 10,
-            textopt: pixel
+            textopt: pixel,
+            value: ''
         }
     },
     methods: {

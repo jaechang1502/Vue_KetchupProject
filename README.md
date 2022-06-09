@@ -47,3 +47,20 @@ npm run lint
 1. 걍 함  
 2. 눈물찔끔흘리면서 강의 봄  그리고 토이프로젝트 햇는데 강의 그대로 프로젝트 올리기에는 창피해서 깃허브에도 안올림  
 3. ToastUI ImageEditor API 써봄  (콘솔창 뒤져봐야됨)
+
+###firebase deploy
+firebase:deploy   = vue-cli-service build && firebase deploy
+
+###firebase config file
+```javascirpt
+export default {
+    apiKey: ".....",
+    authDomain: "x.firebaseapp.com",
+    projectId: "x-74800",
+    storageBucket: "x.appspot.com",
+    messagingSenderId: "...",
+    appId: "....",
+    measurementId: "..."
+  };
+```
+
