@@ -21,7 +21,7 @@
            <hr>
            <div class="mt-5">
                <KakaoCheck></KakaoCheck>
-                <b-button class="mt-2" variant="danger" block > <b-icon icon="google" class="mr-2" ></b-icon> 구글로 로그인</b-button>
+                <b-button @click="$store.commit('')" class="mt-2" variant="danger" block > <b-icon icon="google" class="mr-2" ></b-icon> 구글로 로그인</b-button>
                <b-button variant="primary" block > <b-icon icon="facebook" class="mr-2" ></b-icon>  페이스북으로 로그인</b-button>
               
               

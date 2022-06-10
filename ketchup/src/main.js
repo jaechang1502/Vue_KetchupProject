@@ -7,11 +7,10 @@ import carousel from 'vue-owl-carousel'
 import store from './store/store.js';
 import './plugins/cssdata'
 import './plugins/firebase'
-import InputColorPicker from 'vue-native-color-picker'
+
 
 
 Vue.use(carousel);
-Vue.use(InputColorPicker);
 
 Vue.config.productionTip = false
 

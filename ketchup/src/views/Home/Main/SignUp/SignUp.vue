@@ -32,7 +32,8 @@
             </b-form-valid-feedback>
         </div>
         <div class="align-items-center mt-5">
-            <b-button variant="outline-success" block>회원가입 완료</b-button>
+
+            <b-button variant="outline-success" block  @click="loginSign">회원가입 완료</b-button>
         </div>
         
      </b-form>
@@ -44,6 +45,7 @@
 <script>
 import mainhead from '../MainHead.vue'
 import mainbottom from '../MainBottom.vue'
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 export default {
     data() {
         return {
@@ -68,8 +70,24 @@ export default {
             return this.pw1 == this.pw2 && this.pw1 != '' && this.pw2 != ''
              && this.pw1.length > 4 && this.pw1.length < 12 
              && this.pw2.length > 4 && this.pw2.length < 12 
+        },
+    
+    },
+    methods: {
+        loginSign(){
+        const auth = getAuth();
+         createUserWithEmailAndPassword(auth, this.email,this.pw1)
+        .then((userCredential) => {
+        const user = userCredential.user;
+        console.log(user);
+        console.log(userCredential)
+            })
+            .catch((error) => {
+        console.log(error)
+    });
         }
-
+       
+        
     }
     
 

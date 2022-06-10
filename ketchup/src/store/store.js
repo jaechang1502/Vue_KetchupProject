@@ -14,8 +14,7 @@ export default new Vuex.Store({
     editdata: '',
     upload: '',
     loginmenu: false,
-    ID: '',
-    password:'',
+    SignWithGoogle: '',
     
        
   },
@@ -37,6 +36,8 @@ export default new Vuex.Store({
    loginmenu(state,menu){
      state.loginmenu = menu;
    }
+   
+
    
    
   
