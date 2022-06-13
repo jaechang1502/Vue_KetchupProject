@@ -8,7 +8,7 @@
         <b-form @submit.stop.prevent>
         <div class="mt-4">
             <p>이름</p>
-            <b-form-input type="text" ></b-form-input>
+            <b-form-input @input="form" type="text" ></b-form-input>
         </div>
          <div class="mt-4">
             <p>이메일</p>
@@ -43,6 +43,7 @@
 </template>
 
 <script>
+//vuex 아이디값,패스워드값,이름값 받아서 firebase에 전해줘야되는디 왜 안되냐고 이색기야
 import mainhead from '../MainHead.vue'
 import mainbottom from '../MainBottom.vue'
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
@@ -62,6 +63,14 @@ export default {
         this.$store.commit('loginmenu',false)
     },
     computed: {
+        form: {
+            get(){
+                return this.$store.state.name,this.$store.state.email,this.$store.state.pw1,this.$store.state.pw2;
+            },
+            set(a,b,c,d){
+                return this.$store.state.commit('name',a),this.$store.state.commit('name',b),this.$store.state.commit('name',c),this.$store.state.commit('name',d);
+            }
+        },
         mailcheck(){
              var regExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
             return this.email.match(regExp) != null
@@ -83,6 +92,7 @@ export default {
         console.log(userCredential)
             })
             .catch((error) => {
+                
         console.log(error)
     });
         }

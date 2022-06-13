@@ -8,12 +8,21 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    //left menu
     menu: 0,
     images:[],
     active: 'active',
     editdata: '',
     upload: '',
     loginmenu: false,
+   
+    //id //pw
+    name: '',
+    email: '', 
+    pw1: '',
+    pw2: '',
+
+    //google
     SignWithGoogle: '',
     
        
