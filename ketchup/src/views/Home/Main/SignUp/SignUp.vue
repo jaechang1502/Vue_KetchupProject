@@ -8,24 +8,24 @@
         <b-form @submit.stop.prevent>
         <div class="mt-4">
             <p>이름</p>
-            <b-form-input @input="form" type="text" ></b-form-input>
+            <b-form-input v-model="signup.name" type="text" ></b-form-input>
         </div>
          <div class="mt-4">
             <p>이메일</p>
-            <b-form-input type="email" v-model="email"  :state="mailcheck" ></b-form-input>
+            <b-form-input type="email" v-model="signup.email"  :state="mailcheck" ></b-form-input>
             <b-form-invalid-feedback :state="mailcheck">
                   올바르지않은 이메일입니다
                  </b-form-invalid-feedback>
         </div>
         <div class="mt-4">
             <p>비밀번호</p>
-            <b-form-input  type="password" v-model="pw1" :state="pwcheck"></b-form-input>
+            <b-form-input  type="password" v-model="signup.pw1" :state="pwcheck"></b-form-input>
         </div>
         <div class="mt-4">
             <p>비밀번호 확인</p>
-            <b-form-input  type="password" v-model="pw2" :state="pwcheck"></b-form-input>
+            <b-form-input  type="password" v-model="signup.pw2" :state="pwcheck"></b-form-input>
               <b-form-invalid-feedback :state="pwcheck">
-                  패스워드 길이는 최소 4자 최대 12자 입니다 
+                  패스워드 길이는 최소 6자 최대 15자 입니다<br/> ※ 문자와 조합해주세요
                  </b-form-invalid-feedback>
             <b-form-valid-feedback :state="pwcheck">
                 비밀번호 확인 완료
@@ -33,7 +33,7 @@
         </div>
         <div class="align-items-center mt-5">
 
-            <b-button variant="outline-success" block  @click="loginSign">회원가입 완료</b-button>
+            <b-button variant="outline-success" :disabled="formcheck" block  @click="loginSign">회원가입 완료</b-button>
         </div>
         
      </b-form>
@@ -50,9 +50,13 @@ import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 export default {
     data() {
         return {
-           pw1:'',
-           pw2:'',
-           email:'',
+            signup: {
+                name: '',
+                pw1:'',
+                pw2:'',
+                email:'',
+            }
+          
         }
     },
     components: {
@@ -62,42 +66,38 @@ export default {
     mounted () {
         this.$store.commit('loginmenu',false)
     },
-    computed: {
-        form: {
-            get(){
-                return this.$store.state.name,this.$store.state.email,this.$store.state.pw1,this.$store.state.pw2;
-            },
-            set(a,b,c,d){
-                return this.$store.state.commit('name',a),this.$store.state.commit('name',b),this.$store.state.commit('name',c),this.$store.state.commit('name',d);
-            }
-        },
+    computed: { 
         mailcheck(){
              var regExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
-            return this.email.match(regExp) != null
+            return this.signup.email.match(regExp) != null
         },
         pwcheck(){
-            return this.pw1 == this.pw2 && this.pw1 != '' && this.pw2 != ''
-             && this.pw1.length > 4 && this.pw1.length < 12 
-             && this.pw2.length > 4 && this.pw2.length < 12 
+            return this.signup.pw1 == this.signup.pw2 && this.signup.pw1 != '' && this.signup.pw2 != ''
+             && this.signup.pw1.length > 6 && this.signup.pw1.length < 15 
+             && this.signup.pw2.length > 6 && this.signup.pw2.length < 15 
         },
-    
+        formcheck(){
+            if(!this.mailcheck || !this.pwcheck){
+            return true
+            }
+            return false
+        }
     },
     methods: {
         loginSign(){
         const auth = getAuth();
-         createUserWithEmailAndPassword(auth, this.email,this.pw1)
+         createUserWithEmailAndPassword(auth, this.signup.email,this.signup.pw1)
         .then((userCredential) => {
         const user = userCredential.user;
         console.log(user);
         console.log(userCredential)
-            })
-            .catch((error) => {
-                
-        console.log(error)
+        alert('회원가입 축하드립니다 😁');
+        this.$router.push('/')
+            }).catch((error) => {
+            console.log(error)
+            alert('회원가입실패');
     });
         }
-       
-        
     }
     
 
