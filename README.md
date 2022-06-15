@@ -52,6 +52,9 @@ npm run lint
 firebase:deploy   = vue-cli-service build && firebase deploy
 
 ###firebase config file
+```shell
+cd/Vue_KetchupProject/ketchup/src/plugins
+```
 ```javascirpt
 export default {
     apiKey: ".....",
