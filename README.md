@@ -54,6 +54,7 @@ firebase:deploy   = vue-cli-service build && firebase deploy
 ###firebase config file
 ```shell
 cd Vue_KetchupProject/ketchup/src/plugins
+vi firebaseconfig.js
 ```
 ```javascirpt
 export default {
