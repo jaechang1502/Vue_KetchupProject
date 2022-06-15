@@ -56,6 +56,11 @@ export default {
   .catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
+    if(errorCode == 'auth/wrong-password'){
+      alert('아따 패스워드가 다른디?')
+    }else if(errorCode == 'auth/user-not-found'){
+      alert("유저를 찾을수 없다는디요?")
+    }
     alert(errorCode)
     alert(errorMessage)
   });

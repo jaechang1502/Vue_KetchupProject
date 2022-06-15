@@ -12,8 +12,9 @@
             </b-collapse>
             <b-navbar-nav class="ml-auto">
                 <button v-if="$store.state.userinfo == ''" class="login" @click="$store.commit('loginmenu',true)">Login / Sign Up</button>
-                <button v-if="$store.state.userinfo != ''" class="login">{{$store.state.userinfo.email}}</button>
                 <button class="login  text-flicker-out-glow" @click="editor()">제작하기</button>
+                
+                <button v-if="$store.state.userinfo != ''" class="login"> <b-avatar variant="light"></b-avatar></button>
                 
               
             </b-navbar-nav>

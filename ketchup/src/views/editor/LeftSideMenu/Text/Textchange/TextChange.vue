@@ -2,7 +2,8 @@
   <div class="textDecoration ">
 <div class="d-flex mb-3">
 <b-form-select class="mr-3" v-model="textchanged" :options="textopt" style="width:31%"></b-form-select>
-<button class="textaline"><b-icon icon="type-bold" aria-hidden="true"></b-icon></button>
+<button class="textaline"><b-icon 
+ icon="type-bold" aria-hidden="true"></b-icon></button>
 <button class="textaline"> <b-icon icon="type-italic" aria-hidden="true"></b-icon></button>
 <button class="textaline"> <b-icon icon="type-underline" aria-hidden="true"></b-icon></button>
 <button class="textaline">  <b-icon icon="type-strikethrough" aria-hidden="true"></b-icon></button>
@@ -14,8 +15,8 @@
     <button class="textaline"> <b-icon icon="text-right" aria-hidden="true"></b-icon></button>
     </div>
     <div class="p-3 w-50">
-        <b-form-input v-model="value" type="color"></b-form-input>
-        {{value}}
+        <b-form-input v-model="fontcolor" type="color"></b-form-input>
+        {{fontcolor}}
     </div>
 </div>
 <div>
@@ -31,15 +32,17 @@ export default {
         return{
             textchanged: 10,
             textopt: pixel,
-            value: ''
+            fontcolor: ''
         }
     },
     methods: {
-            changetext(){
-                this.$store.state.editdata.editor.invoke('changeTextStyle','id',{
-                    fill:'',
+       },
+       beforeUpdate(){
+        setTimeout(()=>{
+                this.$store.state.editdata.editor.invoke('changeTextStyle',this.$store.state.editdata.editor.editorInstance.activeObjectId,{
+                    fill:this.value,
                     fontStyle:'',
-                    fontFamily: this.selected.fontfamily,
+                    fontFamily:'',
                     fontSize: this.textchanged,
                     fontWeight: '',
                     textAlign: '',
@@ -49,7 +52,9 @@ export default {
                 }).catch((err)=>{
                     console.log(err);
                 })
-            }
+        },0) 
+
+            
        }
 }
 </script>

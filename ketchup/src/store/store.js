@@ -15,6 +15,14 @@ export default new Vuex.Store({
     editdata: '',
     upload: '',
     loginmenu: false,
+    text:{
+      fill:'',
+      fontsize:'',
+      fontstyle:'',
+      fontWeight:'',
+      textAlign:'',
+      textDecoration:''
+    },
     
    
     //id //pw
@@ -45,12 +53,17 @@ export default new Vuex.Store({
    Editor(state,data){
      state.editdata = data;
    },
+   text(state,font,data){
+    state.text = data
+
+   },
    loginmenu(state,menu){
      state.loginmenu = menu;
    },
    userinfo(state,data){
     state.userinfo = data;
    }
+   
    
 
    
