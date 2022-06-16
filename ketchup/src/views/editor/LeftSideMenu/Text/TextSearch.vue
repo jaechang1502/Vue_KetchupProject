@@ -7,7 +7,7 @@
      <b-form-select v-model="selected"  >
       <b-form-select-option :style="{fontFamily:options.css}" v-for="(options,idx) in options" :key="idx" :value="options.value">{{options.text}}</b-form-select-option>
       </b-form-select>
-      <p>{{selected}}</p>
+      <p>{{$store.state.text.fontfamily}}</p>
     
   </div>
 <Textfontchange></Textfontchange>
@@ -20,8 +20,17 @@ import fontdata from '../../../../Data/font.js'
 export default {
   data(){
     return {
-      selected: { "fontfamily": "inherit" },
       options: fontdata  
+    }
+  },
+  computed: {
+    selected: {
+      get() {
+        return this.$store.state.text.fontfamily
+      },
+      set(v){
+        this.$store.commit({type:'text',fontfamily:v})
+      }
     }
   },
   methods: {
@@ -30,9 +39,9 @@ export default {
        this.$store.state.editdata.editor.invoke('addText','text',{
            styles: {
         fill: '#000',
-        fontSize: 20,
-        fontWeight: 'bold',
-        fontFamily: this.selected.fontfamily,       
+        fontSize: this.$store.state.text.fontsize,
+        fontWeight: this.$store.state.text.fontWeight,
+        fontFamily: this.$store.state.text.fontfamily.fontfamily,       
     },
     position: {
         x: 500,

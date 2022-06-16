@@ -16,10 +16,11 @@ export default new Vuex.Store({
     upload: '',
     loginmenu: false,
     text:{
-      fill:'',
-      fontsize:'',
-      fontstyle:'',
-      fontWeight:'',
+      fill:'#000000',
+      fontsize:'24',
+      fontfamily: {"fontfamily": "inherit"},
+      fontstyle: 'nomal',
+      fontWeight:'nomal',
       textAlign:'',
       textDecoration:''
     },
@@ -53,9 +54,12 @@ export default new Vuex.Store({
    Editor(state,data){
      state.editdata = data;
    },
-   text(state,font,data){
-    state.text = data
-
+   text(state,data){
+    state.text.fill = data.fill
+    state.text.fontsize = data.fontsize
+    state.text.fontstyle = data.fontstyle
+    state.text.fontWeight = data.fontWeight
+    state.text.textDecoration = data.textDecoration
    },
    loginmenu(state,menu){
      state.loginmenu = menu;
