@@ -33,10 +33,10 @@ export default {
     name: 'TopMenu',
     methods: {
         undo(){
-           this.$store.state.editdata.editor.invoke('undo')
+             this.$store.state.mainStore.editdata.editor.invoke('undo');  
         },
         redo(){
-            this.$store.state.editdata.editor.invoke('redo')
+            this.$store.state.mainStore.editdata.editor.invoke('redo')
         }
 
     },

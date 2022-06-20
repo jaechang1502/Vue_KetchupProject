@@ -15,26 +15,26 @@
 <div class="d-flex flex-column  p-1 text-white bg-dark " style="width: 320px; ">
 <div class="editor-con">
     <loading/>
-    <div v-if="$store.state.menu==0">
+    <div v-if="$store.state.mainStore.menu==0">
          <TotalSearch />
     </div>
-    <div v-if="$store.state.menu==1">
+    <div v-if="$store.state.mainStore.menu==1">
         <Characters/>
     </div>
-        <div v-if="$store.state.menu==2">
+        <div v-if="$store.state.mainStore.menu==2">
        <TextSearch/>
     </div>
-        <div v-if="$store.state.menu==3">
+        <div v-if="$store.state.mainStore.menu==3">
         <b-button @click="test()" >123</b-button>
         
     </div>
-        <div v-if="$store.state.menu==4">
+        <div v-if="$store.state.mainStore.menu==4">
             조합만 보여여! 
     </div>
-        <div v-if="$store.state.menu==5">
+        <div v-if="$store.state.mainStore.menu==5">
             배경만 보여요 
     </div>
-        <div v-if="$store.state.menu==6">
+        <div v-if="$store.state.mainStore.menu==6">
         <Upload />
     </div>
 </div>
@@ -55,10 +55,10 @@ import Characters from './LeftSideMenu/Characters/Characters.vue'
 import TextSearch from './LeftSideMenu/Text/TextSearch.vue'
 
 
+
 export default {
     data(){
         return {
-           
         }
     },
     mounted () {

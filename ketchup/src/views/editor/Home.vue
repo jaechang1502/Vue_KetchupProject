@@ -53,8 +53,6 @@
                             Crop : '자르기',
                             Load : '업로드',
                         }
-                        
-                       
                     },
                     selectionStyle:{
                         cornerSize: 10,
