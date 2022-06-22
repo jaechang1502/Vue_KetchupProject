@@ -8,7 +8,7 @@
 이재창(@jaechang1502)
 
 
-###firebase config file(이거 안하면 설치 안됨)
+### firebase config file(이거 안하면 설치 안됨)
 ```shell
 cd Vue_KetchupProject/ketchup/src/plugins
 vi firebaseconfig.js
