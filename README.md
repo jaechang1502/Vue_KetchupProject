@@ -24,9 +24,11 @@ vue add vuex
 ## 📖 프로젝트 설치
 - 설치
 ```
+cd ketchup
 npm install
 ```
 - 실행
+- 
 ```
 npm run serve
 ```
