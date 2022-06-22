@@ -10,16 +10,17 @@
                 </b-navbar-nav>
                 <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
             </b-collapse>
+ 
             <b-navbar-nav class="ml-auto">
-                <button v-if="$store.state.userinfo == ''" class="login" @click="$store.commit('loginmenu',true)">Login / Sign Up</button>
+                <button v-if="$store.state.mainStore.userinfo == ''" class="login" @click="$store.commit('loginmenu',true)">Login / Sign Up</button>
                 <button class="login  text-flicker-out-glow" @click="editor()">제작하기</button>
                 
-                <button v-if="$store.state.userinfo != ''" class="login"> <b-avatar variant="light"></b-avatar></button>
+                <button v-if="$store.state.mainStore.userinfo != ''" class="login"> <b-avatar variant="light"></b-avatar></button>
                 
               
             </b-navbar-nav>
         </b-navbar>
-       <LoginMenu v-if="$store.state.loginmenu"></LoginMenu>
+       <LoginMenu v-if="$store.state.mainStore.loginmenu"></LoginMenu>
   </div>
 </template>
 

@@ -1,4 +1,5 @@
 const texteditor = {
+    strict: true,
     namespace: true,
     state: {
             fill:'#000000',
@@ -12,6 +13,27 @@ const texteditor = {
     getter: {
     },
     mutations: {
+        setfill(state,data){
+            state.fill = data
+        },
+        setfontsize(state,data){
+            state.fontsize = data
+        },
+        setfontfamily(state,data){
+            state.fontfamily = data
+        },
+        setfontstyle(state,data){
+            state.fontstyle = data
+        },
+        setfontweight(state,data){
+            state.fontWeight = data
+        },
+        settextAlign(state,data){
+            state.textAlign = data
+        },
+        settextDecoration(state,data){
+            state.textDecoration = data
+        },
 
     },
     actions: {
