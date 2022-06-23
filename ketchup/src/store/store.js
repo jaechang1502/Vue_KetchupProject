@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import mainStore from "./mainStore";
-import editText from "./editText";
+import mainStore from "./modules/mainStore";
+import editText from "./modules/editText";
 
 Vue.use(Vuex);
 

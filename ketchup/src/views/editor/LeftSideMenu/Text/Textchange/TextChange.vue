@@ -4,9 +4,9 @@
 <b-form-select class="mr-3" v-model="textchanged" :options="textopt" style="width:31%"></b-form-select>
 <button class="textaline"><b-icon 
  icon="type-bold" aria-hidden="true"></b-icon></button>
-<button class="textaline" @click="$store.commit('fontstyle',bold)"> <b-icon icon="type-italic" aria-hidden="true"></b-icon></button>
-<button class="textaline" @click="$store.commit('textDecoration',underline)"> <b-icon icon="type-underline" aria-hidden="true"></b-icon></button>
-<button class="textaline" @click="$store.commit('textDecoration',line-through)">  <b-icon icon="type-strikethrough" aria-hidden="true"></b-icon></button>
+<button class="textaline" @click="setfontWeight(bold)"> <b-icon icon="type-italic" aria-hidden="true"></b-icon></button>
+<button class="textaline" @click="settextDecoration(underline)"> <b-icon icon="type-underline" aria-hidden="true"></b-icon></button>
+<button class="textaline" @click="settextDecoration(line-through)">  <b-icon icon="type-strikethrough" aria-hidden="true"></b-icon></button>
 </div>
 <div class="textaline_con d-flex">
     <div class="p-3 textaline_scon">
@@ -19,29 +19,48 @@
     </div>
 </div>
 <div>
-
+<p>fill: {{fill}}</p><br/>
+<p>fontsize:  {{fontsize}}</p><br/>
+<p>fontfamily:  {{fontfamily}}</p><br/>
+<p>fontstyle:  {{fontstyle}}</p><br/>
+<p>fontWeight:  {{fontWeight}}</p><br/>
+<p>textAlign:  {{textAlign}}</p><br/>
 </div>
 </div>
 </template>
 
 <script>
+import { mapMutations, mapState } from 'vuex'
 import pixel from '../../../../../Data/fontPixel'
 export default {
     computed:{
+        ...mapState('editText',{
+            fontsize: state => state.fontsize,
+            fill: state => state.fill,
+            fontfamily: state => state.fontfamily,
+            fontstyle: state => state.fontstyle,
+            fontWeight: state => state.fontWeight,
+            textAlign: state => state.textAlign,
+            textDecoration: state => state.textDecoration
+            
+        }),
+        ...mapState({
+            editdata: state => state.mainStore.editdata
+        }),
         textchanged:{
             get(){
-                return this.$store.state.texteditor.fontsize
+                return this.fontsize
             },
             set(v){
-                  this.$store.commit('fontsize',v)
+                  this.setfontsize(v)
             }
         },
         fontcolor:{
             get(){
-                return this.$store.state.text.fontfill
+                return this.fontfill
             }, 
             set(v){
-                this.$store.commit('fill',v)
+                this.setfill(v)
             }
         }
         
@@ -52,19 +71,23 @@ export default {
         }
     },
     methods: {
+        ...mapMutations('editText',['setfill','setfontsize','setfontfamily','setfontstyle','setfontweight',''])
+
        },
        beforeUpdate(){
+        console.log(this.editdata)
         setTimeout(()=>{
-                this.$store.state.editdata.editor.invoke('changeTextStyle',this.$store.state.mainStore.editdata.editor.editorInstance.activeObjectId,{
-                    fill:this.value,
-                    fontStyle:'',
-                    fontFamily:'',
-                    fontSize: this.textchanged,
-                    fontWeight: '',
-                    textAlign: '',
-                    textDecoration: '',
+                this.editdata.editor.invoke('changeTextStyle',this.editdata.editor.editorInstance.activeObjectId,{
+                    fill:this.fill,
+                    fontStyle:this.fontstyle,
+                    fontFamily:this.fontfamily.fontfamily,
+                    fontSize: this.fontsize,
+                    fontWeight: this.fontWeight,
+                    textAlign: this.textAlign,
+        //textDecoration
                 }).then((res)=>{
                     console.log(res);
+                    console.log(res.fill);
                 }).catch((err)=>{
                     console.log(err);
                 })

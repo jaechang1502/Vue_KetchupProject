@@ -29,14 +29,20 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
 export default {
     name: 'TopMenu',
+    computed:{
+        ...mapState({
+            editdata : state => state.mainStore.editdata
+        })
+    },
     methods: {
         undo(){
-             this.$store.state.mainStore.editdata.editor.invoke('undo');  
+             this.editdata.editor.invoke('undo');  
         },
         redo(){
-            this.$store.state.mainStore.editdata.editor.invoke('redo')
+            this.editdata.editor.invoke('redo')
         }
 
     },

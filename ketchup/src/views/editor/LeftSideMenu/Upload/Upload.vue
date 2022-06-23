@@ -31,7 +31,13 @@
 </template>
 
 <script>
+import {mapState} from 'vuex'
 export default {
+  computed: {
+    ...mapState({
+      editdata: state => state.mainStore.editdata
+    })
+  },
   data(){
     return{
       active : ''
@@ -40,7 +46,7 @@ export default {
   },
   methods: {
     upload(file){
-      let edit = this.$store.state.editdata.editor
+      let edit = this.editdata.editor
       console.log(edit.invoke('loadImageFromURL',file,'theName'))
    }
   }

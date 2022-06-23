@@ -1,13 +1,13 @@
 const texteditor = {
     strict: true,
-    namespace: true,
+    namespaced: true,
     state: {
             fill:'#000000',
             fontsize:24,
             fontfamily: {"fontfamily": "inherit"},
             fontstyle: 'nomal',
             fontWeight:'nomal',
-            textAlign:'',
+            textAlign:'left',
             textDecoration:''
     },
     getter: {

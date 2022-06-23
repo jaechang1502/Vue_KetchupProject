@@ -1,6 +1,5 @@
 import axios from 'axios'
 const mainStore= {
-  namespace: true,
   state: {
     //left menu
     menu: 0,

@@ -12,21 +12,27 @@
             </b-collapse>
  
             <b-navbar-nav class="ml-auto">
-                <button v-if="$store.state.mainStore.userinfo == ''" class="login" @click="$store.commit('loginmenu',true)">Login / Sign Up</button>
+                <button v-if="userinfo == ''" class="login" @click="$store.commit('loginmenu',true)">Login / Sign Up</button>
                 <button class="login  text-flicker-out-glow" @click="editor()">제작하기</button>
                 
-                <button v-if="$store.state.mainStore.userinfo != ''" class="login"> <b-avatar variant="light"></b-avatar></button>
+                <button v-if="userinfo != ''" class="login"> <b-avatar variant="light"></b-avatar></button>
                 
-              
             </b-navbar-nav>
         </b-navbar>
-       <LoginMenu v-if="$store.state.mainStore.loginmenu"></LoginMenu>
+       <LoginMenu v-if="loginmenu"></LoginMenu>
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import LoginMenu from './Login/LoginMenu.vue'
 export default {
+    computed: {
+        ...mapState({
+            userinfo: state => state.mainStore.userinfo,
+            loginmenu: state =>state.mainStore.loginmenu
+        })
+    },
      methods: {
         editor(){
             this.$router.push('/editor')
