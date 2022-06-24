@@ -8,12 +8,7 @@ const mainStore= {
     editdata: '',
     upload: '',
     loginmenu: false,
-
-    //id //pw
-    name: '',
-    email: '', 
-    pw1: '',
-    pw2: '',
+    editmenu: 0,
 
     //google
     SignWithGoogle: '',
@@ -50,6 +45,9 @@ const mainStore= {
    },
    userinfo(state,data){
     state.userinfo = data;
+   },
+   editmenu(state,menu){
+    state.editmenu = menu;
    }
   
   },

@@ -29,6 +29,7 @@ export default {
       fill: state => state.fill,
       fontsize: state => state.fontsize,
       fontWeight: state => state.fontWeight,
+      textAlign: state => state.textAlign
     }),
     ...mapState({
       editdata: state => state.mainStore.editdata
@@ -48,11 +49,12 @@ export default {
     ),
     //text소환( img가 있어야 텍스트 됨 modeChange error 근데 img 없어도 왜 되는지 모르겟음 ㅅㅂ )
     createtext(){
-       this.editdata.editor.invoke('addText','Text',{
+       this.editdata.editor.invoke('addText','글자를\n 입력해주세요',{
            styles: {
         fill: this.fill,
         fontSize: this.fontsize,
-        fontFamily: this.fontfamily.fontfamily,       
+        fontFamily: this.fontfamily.fontfamily,
+        textAlign: this.textAlign,       
     },
     position: {
         x: 500,

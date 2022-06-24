@@ -7,7 +7,7 @@ const texteditor = {
             fontfamily: {"fontfamily": "inherit"},
             fontstyle: 'nomal',
             fontWeight:'nomal',
-            textAlign:'left',
+            textAlign:'center',
             textDecoration:''
     },
     getter: {
@@ -25,7 +25,7 @@ const texteditor = {
         setfontstyle(state,data){
             state.fontstyle = data
         },
-        setfontweight(state,data){
+        setfontWeight(state,data){
             state.fontWeight = data
         },
         settextAlign(state,data){

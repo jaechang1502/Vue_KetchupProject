@@ -28,7 +28,7 @@
         
     </div>
         <div v-if="menu==4">
-            조합만 보여여! 
+            <Prop></Prop>
     </div>
         <div v-if="menu==5">
             배경만 보여요 
@@ -52,6 +52,7 @@ import TotalSearch from './LeftSideMenu/TotalSearch/TotalSearch.vue'
 import Upload from './LeftSideMenu/Upload/Upload.vue'
 import Characters from './LeftSideMenu/Characters/Characters.vue'
 import TextSearch from './LeftSideMenu/Text/TextSearch.vue'
+import Prop from './LeftSideMenu/Prop/PropFilter.vue'
 import {mapState} from 'vuex'
 
 
@@ -72,7 +73,8 @@ export default {
         TotalSearch,
         Upload,
         Characters,
-        TextSearch
+        TextSearch,
+        Prop
         
     },
     methods: {

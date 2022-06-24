@@ -2,17 +2,16 @@
   <div class="textDecoration ">
 <div class="d-flex mb-3">
 <b-form-select class="mr-3" v-model="textchanged" :options="textopt" style="width:31%"></b-form-select>
-<button class="textaline"><b-icon 
- icon="type-bold" aria-hidden="true"></b-icon></button>
-<button class="textaline" @click="setfontWeight(bold)"> <b-icon icon="type-italic" aria-hidden="true"></b-icon></button>
-<button class="textaline" @click="settextDecoration(underline)"> <b-icon icon="type-underline" aria-hidden="true"></b-icon></button>
-<button class="textaline" @click="settextDecoration(line-through)">  <b-icon icon="type-strikethrough" aria-hidden="true"></b-icon></button>
+<button class="textaline" @click="setfontWeight('bold')"><b-icon icon="type-bold" aria-hidden="true"></b-icon></button>
+<button class="textaline" @click="setfontstyle('italic')"> <b-icon icon="type-italic" aria-hidden="true"></b-icon></button>
+<button class="textaline" @click="settextDecoration('underline')"> <b-icon icon="type-underline" aria-hidden="true"></b-icon></button>
+<button class="textaline" @click="settextDecoration('line-through')">  <b-icon icon="type-strikethrough" aria-hidden="true"></b-icon></button>
 </div>
 <div class="textaline_con d-flex">
     <div class="p-3 textaline_scon">
-    <button class="textaline" ><b-icon icon="text-left" aria-hidden="true"></b-icon></button>
-    <button class="textaline"> <b-icon icon="text-center" aria-hidden="true"></b-icon></button>
-    <button class="textaline"> <b-icon icon="text-right" aria-hidden="true"></b-icon></button>
+    <button class="textaline" @click="settextAlign('left')"><b-icon icon="text-left" aria-hidden="true"></b-icon></button>
+    <button class="textaline" @click="settextAlign('center')"> <b-icon icon="text-center" aria-hidden="true"></b-icon></button>
+    <button class="textaline" @click="settextAlign('right')"> <b-icon icon="text-right" aria-hidden="true"></b-icon></button>
     </div>
     <div class="p-3 w-50">
         <b-form-input v-model="fontcolor" type="color"></b-form-input>
@@ -71,11 +70,10 @@ export default {
         }
     },
     methods: {
-        ...mapMutations('editText',['setfill','setfontsize','setfontfamily','setfontstyle','setfontweight',''])
+        ...mapMutations('editText',['setfill','setfontsize','setfontfamily','setfontstyle','setfontWeight','settextDecoration','settextAlign'])
 
        },
        beforeUpdate(){
-        console.log(this.editdata)
         setTimeout(()=>{
                 this.editdata.editor.invoke('changeTextStyle',this.editdata.editor.editorInstance.activeObjectId,{
                     fill:this.fill,
@@ -87,7 +85,6 @@ export default {
         //textDecoration
                 }).then((res)=>{
                     console.log(res);
-                    console.log(res.fill);
                 }).catch((err)=>{
                     console.log(err);
                 })

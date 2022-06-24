@@ -123,4 +123,16 @@
 .textaline:hover{
   color: yellow;
 }
+.prop_edit{
+  cursor: pointer;
+}
+.prop_edit:hover{
+  font-weight: bold;
+}
+.editcon .editbutton{
+  border:none;
+  background-color:transparent;
+  color: white;
+  width: 100%;
+}
 

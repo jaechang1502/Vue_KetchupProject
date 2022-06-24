@@ -14,5 +14,13 @@ export default[
     {value: 96, text: 96},
     {value: 120, text: 120},
     {value: 144, text: 144},
+    {value: 166, text: 166},
+    {value: 172, text: 172},
+    {value: 200, text: 200},
+    {value: 232, text: 232},
+    {value: 268, text: 268},
+    {value: 308, text: 308},
+    {value: 400, text: 400},
+    
 
 ]
